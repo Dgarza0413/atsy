@@ -17,7 +17,7 @@ function Header() {
   }
 
   return (
-    <Menu fluid id="menu" inverted>
+    <Menu stackable fluid id="menu" inverted>
       <Container text>
         <Link href="/">
           <Menu.Item header active={isActive('/')}>
@@ -60,22 +60,22 @@ function Header() {
             </Menu.Item>
           </>
         ) : (
-          <>
-            <Link href="/login">
-              <Menu.Item header active={isActive('/login')}>
-                <Icon name="sign in" size="large" />
-                login
+            <>
+              <Link href="/login">
+                <Menu.Item header active={isActive('/login')}>
+                  <Icon name="sign in" size="large" />
+                  login
               </Menu.Item>
-            </Link>
+              </Link>
 
-            <Link href="/signup">
-              <Menu.Item header active={isActive('/signup')}>
-                <Icon name="signup" size="large" />
-                signup
+              <Link href="/signup">
+                <Menu.Item header active={isActive('/signup')}>
+                  <Icon name="signup" size="large" />
+                  signup
               </Menu.Item>
-            </Link>
-          </>
-        )}
+              </Link>
+            </>
+          )}
       </Container>
     </Menu>
   );

@@ -1,11 +1,11 @@
-// const app = express();
-import mongoose from "mongoose"
+import mongoose from 'mongoose';
 
 const connection = {};
-// const PORT = process.env.PORT || 3001
 const INIT_DB = process.env.INIT_DB || "mongodb://localhost/react-reserve"
 
 const connectDb = async () => {
+
+    console.log(process.env.INIT_DB)
 
     // use new db connection
     if (connection.isConnected) {
@@ -20,13 +20,9 @@ const connectDb = async () => {
         useUnifiedTopology: true,
         useFindAndModify: false
     })
-    console.log("db connected")
+
     connection.isConnected = db.connections[0].readyState;
+    console.log(connection.isConnected)
 }
-
-
-// app.listen(PORT, function () {
-//     console.log(`🌎  ==> API Server now listening on PORT ${PORT}!`);
-// });
 
 export default connectDb;
