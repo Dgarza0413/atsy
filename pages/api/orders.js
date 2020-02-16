@@ -9,6 +9,7 @@ export default async (req, res) => {
         const { userId } = jwt.verify(req.headers.authorization, process.env.JWT_SECRET)
         const orders = await Order
             .find({ user: userId })
+            .sort({ createdAt: 'desc' })
             .populate({ path: 'products.product', model: "Product" })
 
         res.status(200).json({ orders })
