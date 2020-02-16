@@ -1,5 +1,6 @@
 import mongoose from 'mongoose';
 import jwt from 'jsonwebtoken';
+import Product from '../../models/Product';
 import Cart from '../../models/Cart';
 import connectDb from '../../utils/connectDb';
 
@@ -34,7 +35,7 @@ async function handleGetRequest(req, res) {
         );
         const cart = await Cart
             .findOne({ user: userId })
-            .populate({ path: 'products.product', model: 'Product' })
+            .populate({ path: 'products.product', model: Product })
         res.status(200).json(cart.products)
 
     } catch (error) {
