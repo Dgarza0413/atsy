@@ -22,7 +22,6 @@ function CreateProduct() {
 
     useEffect(() => {
         const isProduct = Object.values(product).every(el => Boolean(el))
-        console.log(isProduct)
         isProduct ? setDisabled(false) : setDisabled(true)
     }, [product])
 
@@ -56,7 +55,6 @@ function CreateProduct() {
             const { name, price, description } = product;
             const payload = { name, price, description, mediaUrl }
             const response = await axios.post(url, payload)
-            console.log({ response })
             setLoading(false)
             setProduct(INITIAL_PRODUCT)
             setSuccess(true)
