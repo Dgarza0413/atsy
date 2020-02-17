@@ -1,7 +1,7 @@
 import mongoose from 'mongoose';
 
 const connection = {};
-const INIT_DB = process.env.INIT_DB || "mongodb://localhost/react-reserve"
+const MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/react-reserve"
 
 const connectDb = async () => {
 
@@ -10,7 +10,7 @@ const connectDb = async () => {
         //use exisiting database connection
         return;
     }
-    const db = await mongoose.connect(INIT_DB, {
+    const db = await mongoose.connect(MONGODB_URI, {
         useCreateIndex: true,
         useNewUrlParser: true,
         useUnifiedTopology: true,
