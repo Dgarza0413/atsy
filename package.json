@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "next",
     "start": "next start -p $PORT",
-    "build": "next build"
+    "build": "next build",
+    "seed": "node utils/seedDB.js"
   },
   "keywords": [],
   "author": "",
