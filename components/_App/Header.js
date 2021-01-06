@@ -29,7 +29,7 @@ function Header({ user }) {
               src="/static/logo.svg"
               style={{ marginRight: '1em' }}
             />
-            React Reserve
+            Atsy
           </Menu.Item>
         </Link>
         <Link href="/cart">
